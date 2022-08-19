@@ -1,0 +1,66 @@
+
+
+ NAS Parallel Benchmarks 3.4 -- FT Benchmark
+
+ No input file inputft.data. Using compiled defaults
+ Size                :  512x 512x 512  (class C)
+ Iterations          :             20
+ Number of processes :              8
+ Processor array     :         1x   8
+ Layout type         :             1D
+
+ Initialization time =      3.0829
+
+ T =    1     Checksum =    5.195078707457D+02    5.149019699238D+02
+ T =    2     Checksum =    5.155422171134D+02    5.127578201997D+02
+ T =    3     Checksum =    5.144678022222D+02    5.122251847514D+02
+ T =    4     Checksum =    5.140150594328D+02    5.121090289018D+02
+ T =    5     Checksum =    5.137550426810D+02    5.121143685824D+02
+ T =    6     Checksum =    5.135811056728D+02    5.121496764568D+02
+ T =    7     Checksum =    5.134569343165D+02    5.121870921893D+02
+ T =    8     Checksum =    5.133651975661D+02    5.122193250322D+02
+ T =    9     Checksum =    5.132955192805D+02    5.122454735794D+02
+ T =   10     Checksum =    5.132410471738D+02    5.122663649603D+02
+ T =   11     Checksum =    5.131971141679D+02    5.122830879827D+02
+ T =   12     Checksum =    5.131605205716D+02    5.122965869718D+02
+ T =   13     Checksum =    5.131290734194D+02    5.123075927445D+02
+ T =   14     Checksum =    5.131012720314D+02    5.123166486553D+02
+ T =   15     Checksum =    5.130760908195D+02    5.123241541685D+02
+ T =   16     Checksum =    5.130528295923D+02    5.123304037599D+02
+ T =   17     Checksum =    5.130310107773D+02    5.123356167976D+02
+ T =   18     Checksum =    5.130103090133D+02    5.123399592211D+02
+ T =   19     Checksum =    5.129905029333D+02    5.123435588985D+02
+ T =   20     Checksum =    5.129714421109D+02    5.123465164008D+02
+ Result verification successful
+
+
+ FT Benchmark Completed.
+ Class           =                        C
+ Size            =            512x 512x 512
+ Iterations      =                       20
+ Time in seconds =                    54.90
+ Total processes =                        8
+ Active processes=                        8
+ Mop/s total     =                  7219.72
+ Mop/s/process   =                   902.47
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.2
+ Compile date    =              27 Jul 2022
+
+ Compile options:
+    MPIFC        = mpif90
+    FLINK        = $(MPIFC)
+    FMPI_LIB     = (none)
+    FMPI_INC     = (none)
+    FFLAGS       = -O3
+    FLINKFLAGS   = $(FFLAGS)
+    RAND         = randi8
+
+
+ Please send feedbacks and/or the results of this run to:
+
+ NPB Development Team 
+ Internet: npb@nas.nasa.gov
+
+
