@@ -1,0 +1,31 @@
+kswapd0 (131, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :      85110385.450506
+se.vruntime                                  :     378607741.309723
+se.sum_exec_runtime                          :      12420436.643960
+se.nr_migrations                             :               300655
+nr_switches                                  :              3057773
+nr_voluntary_switches                        :               824239
+nr_involuntary_switches                      :              2233534
+se.load.weight                               :              1048576
+se.avg.load_sum                              :                 8007
+se.avg.runnable_sum                          :              8201366
+se.avg.util_sum                              :              8188622
+se.avg.load_avg                              :                  162
+se.avg.runnable_avg                          :                  162
+se.avg.util_avg                              :                  162
+se.avg.last_update_time                      :       84258519472128
+se.avg.util_est.ewma                         :                  162
+se.avg.util_est.enqueued                     :                  162
+uclamp.min                                   :                    0
+uclamp.max                                   :                 1024
+effective uclamp.min                         :                    0
+effective uclamp.max                         :                 1024
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                   19
+numa_pages_migrated                          :                    0
+numa_preferred_nid                           :                   -1
+total_numa_faults                            :                    0
+current_node=0, numa_group_id=0
+numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0

@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+dist = ["lru", "mglru"]
+thread = ["16", "32"]
+mem1 = ["2G", "3G", "4G", "5G"]
+mem2 = ["1G", "2G", "3G"]
+mem = [mem1, mem2]
+pattern= ["random", "normal:40", "zipf:0.8"]
+
+path="/home/jongseok/mglru/eval_tmp/"
+
+def parsing_file(file):
+
+def forp(name):
+    for d in dist:
+        for t in thread:
+            for m in mem:
+                for mm in m:
+                    for p in pattern:
+                        for i in range(0,3):
+                            fname = name +"_" + d + "_" + t +"t_" + mm + "_" + p + "_" + "i"
+                            parsing_file(fname)
+
+def results():
+
+
+def hitratio():
+
+
+def kswapd():
+
+
+def vmstat():
+
+
+if __name__ == "__main__":
+    results()
