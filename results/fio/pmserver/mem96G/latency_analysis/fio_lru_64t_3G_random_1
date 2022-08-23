@@ -1,0 +1,65 @@
+randread: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=io_uring, iodepth=128
+...
+fio-3.22-19-g84106
+Starting 64 processes
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+randread: Laying out IO file (1 file / 3072MiB)
+
+randread: (groupid=0, jobs=64): err= 0: pid=1139472: Sat Aug 20 22:28:47 2022
+  read: IOPS=2437k, BW=9520MiB/s (9982MB/s)(5578GiB/600009msec)
+    slat (usec): min=7, max=378, avg=20.79, stdev= 4.27
+    clat (usec): min=55, max=210073, avg=3327.48, stdev=4633.58
+     lat (usec): min=79, max=210090, avg=3348.31, stdev=4633.61
+    clat percentiles (usec):
+     |  1.00th=[  469],  5.00th=[  660], 10.00th=[  758], 20.00th=[  873],
+     | 30.00th=[ 1012], 40.00th=[ 1319], 50.00th=[ 2024], 60.00th=[ 2638],
+     | 70.00th=[ 3490], 80.00th=[ 4490], 90.00th=[ 7111], 95.00th=[10028],
+     | 99.00th=[23462], 99.50th=[32113], 99.90th=[52691], 99.95th=[61604],
+     | 99.99th=[78119]
+   bw (  MiB/s): min= 4894, max=36052, per=100.00%, avg=9535.24, stdev=49.97, samples=76608
+   iops        : min=1252930, max=9229401, avg=2441019.00, stdev=12792.89, samples=76608
+  lat (usec)   : 100=0.01%, 250=0.01%, 500=1.36%, 750=8.11%, 1000=20.01%
+  lat (msec)   : 2=20.26%, 4=25.65%, 10=19.59%, 20=3.71%, 50=1.18%
+  lat (msec)   : 100=0.12%, 250=0.01%
+  cpu          : usr=2.62%, sys=2.33%, ctx=45703672, majf=40, minf=3817
+  IO depths    : 1=0.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=100.0%
+     submit    : 0=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=100.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=100.0%, 64=0.0%, >=64=0.1%
+     issued rwts: total=1462248832,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=128
+
+Run status group 0 (all jobs):
+   READ: bw=9520MiB/s (9982MB/s), 9520MiB/s-9520MiB/s (9982MB/s-9982MB/s), io=5578GiB (5989GB), run=600009-600009msec
+
+Disk stats (read/write):
+  pmem0: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
