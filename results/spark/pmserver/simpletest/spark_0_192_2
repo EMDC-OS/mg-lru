@@ -1,0 +1,82 @@
+22/08/30 01:14:37 WARN Utils: Your hostname, pm resolves to a loopback address: 127.0.1.1; using 115.145.135.107 instead (on interface eno1)
+22/08/30 01:14:37 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+22/08/30 01:14:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark context Web UI available at http://115.145.135.107:4040
+Spark context available as 'sc' (master = local[192], app id = local-1661789683368).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.3.0
+      /_/
+         
+Using Scala version 2.12.15 (OpenJDK 64-Bit Server VM, Java 1.8.0_342)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> import java.time.temporal.ChronoUnit
+import java.time.temporal.ChronoUnit
+
+scala> import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.SparkSession
+
+scala> 
+
+scala> object SparkSort {
+     |     def main(args: Array[String]): Unit = {
+     |         val spark = SparkSession.builder().getOrCreate()
+     |         val file = sc.textFile("/home/jongseok/pmem/dataset.txt", 32)
+     |         val start = java.time.Instant.now()
+     |         val results = file.flatMap(_.split(",")).map(x => (x, 1)).sortByKey().takeOrdered(10)
+     |         val finish = java.time.Instant.now()
+     |         println(s"wall time: ${ChronoUnit.SECONDS.between(start, finish)}")
+     |         results.foreach(println)
+     |         spark.stop()
+     |     }
+     | }
+defined object SparkSort
+
+scala> SparkSort.main(Array())
+22/08/30 01:54:46 WARN HeartbeatReceiver: Removing executor driver with no recent heartbeats: 174278 ms exceeds timeout 120000 ms
+22/08/30 01:54:46 WARN SparkContext: Killing executors is not supported by current scheduler.
+22/08/30 02:16:28 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:103)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1053)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:238)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:2066)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:259)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:293)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 13 more
+22/08/30 02:16:29 WARN NettyRpcEnv: Ignored message: HeartbeatResponse(true)
+wall time: 6152
+(-1000000002564686262,1)
+(-1000000003594304967,1)
+(-100000000533490406,1)
+(-1000000007090072177,1)
+(-10000000083891645,1)
+(-1000000008872537210,1)
+(-1000000020297148456,1)
+(-1000000022320435653,1)
+(-1000000024211491821,1)
+(-1000000028972313414,1)
+
+scala> :quit

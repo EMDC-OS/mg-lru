@@ -1,0 +1,2 @@
+22/08/30 15:58:54 WARN Utils: Your hostname, pm resolves to a loopback address: 127.0.1.1; using 115.145.135.107 instead (on interface eno1)
+22/08/30 15:58:54 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
