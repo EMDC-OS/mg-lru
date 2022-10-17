@@ -1,0 +1,28 @@
+kswapd0 (365, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :      78146534.119403
+se.vruntime                                  :    2404890321.471522
+se.sum_exec_runtime                          :      55161606.280342
+se.nr_migrations                             :                68283
+nr_switches                                  :              6659268
+nr_voluntary_switches                        :               286614
+nr_involuntary_switches                      :              6372654
+se.load.weight                               :              1048576
+se.avg.load_sum                              :                 2794
+se.avg.runnable_sum                          :              2861196
+se.avg.util_sum                              :              2813663
+se.avg.load_avg                              :                   60
+se.avg.runnable_avg                          :                   60
+se.avg.util_avg                              :                   59
+se.avg.last_update_time                      :       75884384804864
+se.avg.util_est.ewma                         :                  688
+se.avg.util_est.enqueued                     :                   59
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                   49
+numa_pages_migrated                          :                    0
+numa_preferred_nid                           :                   -1
+total_numa_faults                            :                    0
+current_node=0, numa_group_id=0
+numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0
+numa_faults node=1 task_private=0 task_shared=0 group_private=0 group_shared=0
