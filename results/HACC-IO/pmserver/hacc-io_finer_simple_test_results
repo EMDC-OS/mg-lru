@@ -1,0 +1,931 @@
+3천만, LRU, 32t, 안지우고 처음 실행 결과 무시
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5740.84 BW[MB/s] 37285306368 Bytes 6.19388 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4222.59 BW[MB/s] 37285306368 Bytes 8.42091 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 3745.55 BW[MB/s] 37285306368 Bytes 9.49342 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4791.23 BW[MB/s] 37285306368 Bytes 7.42148 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 3817.03 BW[MB/s] 37285306368 Bytes 9.31562 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 3935.34 BW[MB/s] 37285306368 Bytes 9.03558 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4494.1 BW[MB/s] 37285306368 Bytes 7.91216 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4638.93 BW[MB/s] 37285306368 Bytes 7.66515 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4590.4 BW[MB/s] 37285306368 Bytes 7.74618 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4803.22 BW[MB/s] 37285306368 Bytes 7.40295 MaxTime[sec] 
+
+------------------------------------------------------------------------
+3천만, Finer8, 32t, 안지우고 처음 실행 결과 무시
+
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5637.75 BW[MB/s] 37285306368 Bytes 6.30713 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 3702.19 BW[MB/s] 37285306368 Bytes 9.60459 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4996.62 BW[MB/s] 37285306368 Bytes 7.11642 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4336.67 BW[MB/s] 37285306368 Bytes 8.19938 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4618.57 BW[MB/s] 37285306368 Bytes 7.69893 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4432.17 BW[MB/s] 37285306368 Bytes 8.02272 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4663.51 BW[MB/s] 37285306368 Bytes 7.62474 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4637.39 BW[MB/s] 37285306368 Bytes 7.66769 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5247.82 BW[MB/s] 37285306368 Bytes 6.77577 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4808.28 BW[MB/s] 37285306368 Bytes 7.39517 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 4991.27 BW[MB/s] 37285306368 Bytes 7.12404 MaxTime[sec] 
+
+
+----------------------------------------------------------------------------------------
+27십만, Finer8, 32t, 안지우고 처음 실행 결과 무시
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24648.5 BW[MB/s] 4088506368 Bytes 0.158188 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24640 BW[MB/s] 4088506368 Bytes 0.158243 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24499.6 BW[MB/s] 4088506368 Bytes 0.15915 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24615.6 BW[MB/s] 4088506368 Bytes 0.1584 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15616.3 BW[MB/s] 4088506368 Bytes 0.249682 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18609.9 BW[MB/s] 4088506368 Bytes 0.209518 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24760.6 BW[MB/s] 4088506368 Bytes 0.157472 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16323.9 BW[MB/s] 4088506368 Bytes 0.238858 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17713.8 BW[MB/s] 4088506368 Bytes 0.220117 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24759.9 BW[MB/s] 4088506368 Bytes 0.157477 MaxTime[sec]
+ ---------------------------------------------------------------------------------
+27십만, LRU, 32t, 안지우고 처음 실행 결과 무시
+ 
+ test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17312.3 BW[MB/s] 4088506368 Bytes 0.225222 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 13838.4 BW[MB/s] 4088506368 Bytes 0.281759 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15176.5 BW[MB/s] 4088506368 Bytes 0.256918 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23587.8 BW[MB/s] 4088506368 Bytes 0.165302 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15228.1 BW[MB/s] 4088506368 Bytes 0.256046 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14670.2 BW[MB/s] 4088506368 Bytes 0.265783 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23688.5 BW[MB/s] 4088506368 Bytes 0.164599 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23634.2 BW[MB/s] 4088506368 Bytes 0.164977 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23657.4 BW[MB/s] 4088506368 Bytes 0.164815 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23671.7 BW[MB/s] 408506368 Bytes 0.164716 MaxTime[sec] 
+
+ 
+ ------------------------------------
+ 
+27십만, LRU, 지우면서
+ root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16977.5 BW[MB/s] 4088506368 Bytes 0.229662 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16970 BW[MB/s] 4088506368 Bytes 0.229764 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17069.7 BW[MB/s] 4088506368 Bytes 0.228423 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17071.7 BW[MB/s] 4088506368 Bytes 0.228396 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17025.4 BW[MB/s] 4088506368 Bytes 0.229016 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16659 BW[MB/s] 4088506368 Bytes 0.234053 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17006.9 BW[MB/s] 4088506368 Bytes 0.229266 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17052.2 BW[MB/s] 4088506368 Bytes 0.228657 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16924.9 BW[MB/s] 4088506368 Bytes 0.230377 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15673 BW[MB/s] 4088506368 Bytes 0.248779 MaxTime[sec] 
+
+--------------------------------------------------------------------------
+
+3천만, LRU, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 6974.62 BW[MB/s] 37285306368 Bytes 5.09821 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5565.95 BW[MB/s] 37285306368 Bytes 6.38849 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5634.87 BW[MB/s] 37285306368 Bytes 6.31036 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5408.11 BW[MB/s] 37285306368 Bytes 6.57495 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5363.67 BW[MB/s] 37285306368 Bytes 6.62942 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5256.43 BW[MB/s] 37285306368 Bytes 6.76468 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5111.65 BW[MB/s] 37285306368 Bytes 6.95628 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5032.47 BW[MB/s] 37285306368 Bytes 7.06572 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5061.23 BW[MB/s] 37285306368 Bytes 7.02557 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5088.38 BW[MB/s] 37285306368 Bytes 6.98809 MaxTime[sec] 
+
+----------------------------------------------------
+
+3천만, Finer8, 지우면서
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 6269.97 BW[MB/s] 37285306368 Bytes 5.67117 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 6296.68 BW[MB/s] 37285306368 Bytes 5.64711 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 6302.66 BW[MB/s] 37285306368 Bytes 5.64175 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 6257.73 BW[MB/s] 37285306368 Bytes 5.68226 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 6157.77 BW[MB/s] 37285306368 Bytes 5.7745 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5880.84 BW[MB/s] 37285306368 Bytes 6.04642 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5416.38 BW[MB/s] 37285306368 Bytes 6.56491 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5574.55 BW[MB/s] 37285306368 Bytes 6.37864 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5314.03 BW[MB/s] 37285306368 Bytes 6.69136 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 5074.99 BW[MB/s] 37285306368 Bytes 7.00653 MaxTime[sec] 
+ 
+ 
+ ---------------------------------------------------
+ 
+27십만, Finer8, 지우면서
+ root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19779.3 BW[MB/s] 4088506368 Bytes 0.197131 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19773.9 BW[MB/s] 4088506368 Bytes 0.197185 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19834.3 BW[MB/s] 4088506368 Bytes 0.196584 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19805.2 BW[MB/s] 4088506368 Bytes 0.196873 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14392.4 BW[MB/s] 4088506368 Bytes 0.270914 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19811.2 BW[MB/s] 4088506368 Bytes 0.196813 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19776.4 BW[MB/s] 4088506368 Bytes 0.197159 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19790.2 BW[MB/s] 4088506368 Bytes 0.197021 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19819.2 BW[MB/s] 4088506368 Bytes 0.196733 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19810.5 BW[MB/s] 4088506368 Bytes 0.19682 MaxTime[sec] 
+
+ 
+-----------------------------------------------------
+
+27십만, Finer8, 64t, 지우면서 
+ 
+ root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30890.3 BW[MB/s] 8177012736 Bytes 0.252448 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30716 BW[MB/s] 8177012736 Bytes 0.253881 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30848.6 BW[MB/s] 8177012736 Bytes 0.252789 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30783.9 BW[MB/s] 8177012736 Bytes 0.253321 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30851.5 BW[MB/s] 8177012736 Bytes 0.252766 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30767.9 BW[MB/s] 8177012736 Bytes 0.253453 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30578.8 BW[MB/s] 8177012736 Bytes 0.25502 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30495.5 BW[MB/s] 8177012736 Bytes 0.255716 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30781 BW[MB/s] 8177012736 Bytes 0.253345 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 30806.5 BW[MB/s] 8177012736 Bytes 0.253135 MaxTime[sec] 
+ 
+ 
+ ------------------------------------------------------
+27십만, LRU, 64t, 지우면서
+ 
+ root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23010.4 BW[MB/s] 8177012736 Bytes 0.338899 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23316.6 BW[MB/s] 8177012736 Bytes 0.334448 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23251.8 BW[MB/s] 8177012736 Bytes 0.335381 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23587.4 BW[MB/s] 8177012736 Bytes 0.33061 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23561.3 BW[MB/s] 8177012736 Bytes 0.330975 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23606.7 BW[MB/s] 8177012736 Bytes 0.330338 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23573.7 BW[MB/s] 8177012736 Bytes 0.330801 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23005.2 BW[MB/s] 8177012736 Bytes 0.338975 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23389.7 BW[MB/s] 8177012736 Bytes 0.333404 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23426.9 BW[MB/s] 8177012736 Bytes 0.332874 MaxTime[sec] 
+
+------------------------------------------------------------
+27십만, LRU, 128t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15380.9 BW[MB/s] 16354025472 Bytes 1.01401 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 11144.7 BW[MB/s] 16354025472 Bytes 1.39945 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17533.2 BW[MB/s] 16354025472 Bytes 0.889538 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18650.4 BW[MB/s] 16354025472 Bytes 0.836249 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 10770.1 BW[MB/s] 16354025472 Bytes 1.44812 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17097.5 BW[MB/s] 16354025472 Bytes 0.912203 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18156.1 BW[MB/s] 16354025472 Bytes 0.859016 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 11993 BW[MB/s] 16354025472 Bytes 1.30046 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 13928.3 BW[MB/s] 16354025472 Bytes 1.11977 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 13237 BW[MB/s] 16354025472 Bytes 1.17824 MaxTime[sec] 
+
+-------------------------------------------------------------------
+27십만, Finer8, 128t, 지우면서
+ 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20943.6 BW[MB/s] 16354025472 Bytes 0.744685 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21130.6 BW[MB/s] 16354025472 Bytes 0.738096 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19769.4 BW[MB/s] 16354025472 Bytes 0.788918 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22170.7 BW[MB/s] 16354025472 Bytes 0.703469 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15521.4 BW[MB/s] 16354025472 Bytes 1.00483 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20529.2 BW[MB/s] 16354025472 Bytes 0.75972 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21488.9 BW[MB/s] 16354025472 Bytes 0.725789 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21021.5 BW[MB/s] 16354025472 Bytes 0.741925 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15738 BW[MB/s] 16354025472 Bytes 0.991 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20194.8 BW[MB/s] 16354025472 Bytes 0.7723 MaxTime[sec] 
+
+ ----------------------------------------------------------------
+27십만, Finer 4, 32t, 지우면서
+
+ 
+ root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14174 BW[MB/s] 4088506368 Bytes 0.275088 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14189.7 BW[MB/s] 4088506368 Bytes 0.274785 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14233.2 BW[MB/s] 4088506368 Bytes 0.273945 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14246.6 BW[MB/s] 4088506368 Bytes 0.273687 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14286.9 BW[MB/s] 4088506368 Bytes 0.272915 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14265.8 BW[MB/s] 4088506368 Bytes 0.273318 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14254.8 BW[MB/s] 4088506368 Bytes 0.273528 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14281.8 BW[MB/s] 4088506368 Bytes 0.273012 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 13760.9 BW[MB/s] 4088506368 Bytes 0.283347 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 14411.5 BW[MB/s] 4088506368 Bytes 0.270555 MaxTime[sec] 
+
+-------------------------------------------------------------
+27십만, Finer 4, 64t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24474.3 BW[MB/s] 8177012736 Bytes 0.318628 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24742.1 BW[MB/s] 8177012736 Bytes 0.31518 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24703.4 BW[MB/s] 8177012736 Bytes 0.315674 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24724.7 BW[MB/s] 8177012736 Bytes 0.315401 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24421.4 BW[MB/s] 8177012736 Bytes 0.319319 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24753.5 BW[MB/s] 8177012736 Bytes 0.315035 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24382 BW[MB/s] 8177012736 Bytes 0.319835 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24595.1 BW[MB/s] 8177012736 Bytes 0.317064 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24702.1 BW[MB/s] 8177012736 Bytes 0.31569 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 24845.5 BW[MB/s] 8177012736 Bytes 0.313869 MaxTime[sec] 
+
+----------------------------------------------------------------
+27십만, Finer 4, 128t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17895.2 BW[MB/s] 16354025472 Bytes 0.871541 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16758.6 BW[MB/s] 16354025472 Bytes 0.930649 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16110.3 BW[MB/s] 16354025472 Bytes 0.968101 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15975.5 BW[MB/s] 16354025472 Bytes 0.976268 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16768.4 BW[MB/s] 16354025472 Bytes 0.930108 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18638.6 BW[MB/s] 16354025472 Bytes 0.836778 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 13798.4 BW[MB/s] 16354025472 Bytes 1.13031 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15115.5 BW[MB/s] 16354025472 Bytes 1.03182 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18051.3 BW[MB/s] 16354025472 Bytes 0.864004 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 15048.9 BW[MB/s] 16354025472 Bytes 1.03638 MaxTime[sec] 
+-----------------------------------------------------------------
+27십만, Finer 16, 32t, 지우면서
+
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21435.3 BW[MB/s] 4088506368 Bytes 0.181901 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21686.4 BW[MB/s] 4088506368 Bytes 0.179795 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22264.3 BW[MB/s] 4088506368 Bytes 0.175128 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21964.6 BW[MB/s] 4088506368 Bytes 0.177517 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22174.6 BW[MB/s] 4088506368 Bytes 0.175836 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22178.3 BW[MB/s] 4088506368 Bytes 0.175807 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22205.5 BW[MB/s] 4088506368 Bytes 0.175592 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22130.8 BW[MB/s] 4088506368 Bytes 0.176184 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21145.3 BW[MB/s] 4088506368 Bytes 0.184396 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22091.6 BW[MB/s] 4088506368 Bytes 0.176497 MaxTime[sec] 
+
+------------------------------------------------------------------------
+27십만, Finer 16, 64t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31566.7 BW[MB/s] 8177012736 Bytes 0.247039 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31324.6 BW[MB/s] 8177012736 Bytes 0.248948 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32110.3 BW[MB/s] 8177012736 Bytes 0.242857 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23821.5 BW[MB/s] 8177012736 Bytes 0.327361 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31942.9 BW[MB/s] 8177012736 Bytes 0.24413 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31767.3 BW[MB/s] 8177012736 Bytes 0.245479 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32018 BW[MB/s] 8177012736 Bytes 0.243557 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31959.5 BW[MB/s] 8177012736 Bytes 0.244003 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31817.4 BW[MB/s] 8177012736 Bytes 0.245093 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 31833 BW[MB/s] 8177012736 Bytes 0.244972 MaxTime[sec] 
+
+-------------------------------------------------------------
+27십만, Finer 16, 128t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19810 BW[MB/s] 16354025472 Bytes 0.7873 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16368.3 BW[MB/s] 16354025472 Bytes 0.952841 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19373.8 BW[MB/s] 16354025472 Bytes 0.805026 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19188.3 BW[MB/s] 16354025472 Bytes 0.812807 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20308.7 BW[MB/s] 16354025472 Bytes 0.767968 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20026 BW[MB/s] 16354025472 Bytes 0.778807 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20446.6 BW[MB/s] 16354025472 Bytes 0.762789 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20742.1 BW[MB/s] 16354025472 Bytes 0.751922 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19803.4 BW[MB/s] 16354025472 Bytes 0.78756 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18963.8 BW[MB/s] 16354025472 Bytes 0.822429 MaxTime[sec] 
+ 
+ 
+ ------------------------------------------------------------------
+ 27십만, Finer 32, 32t, 지우면서
+ 
+ root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21486.2 BW[MB/s] 4088506368 Bytes 0.18147 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22195 BW[MB/s] 4088506368 Bytes 0.175675 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22750.6 BW[MB/s] 4088506368 Bytes 0.171385 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22745.3 BW[MB/s] 4088506368 Bytes 0.171425 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22700.5 BW[MB/s] 4088506368 Bytes 0.171763 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22813.5 BW[MB/s] 4088506368 Bytes 0.170912 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22693.3 BW[MB/s] 4088506368 Bytes 0.171817 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22718.1 BW[MB/s] 4088506368 Bytes 0.17163 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22745.2 BW[MB/s] 4088506368 Bytes 0.171425 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 22664.3 BW[MB/s] 4088506368 Bytes 0.172037 MaxTime[sec] 
+
+------------------------------------------------------------------------
+27십만, Finer 32, 64t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32743.2 BW[MB/s] 8177012736 Bytes 0.238163 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32774.6 BW[MB/s] 8177012736 Bytes 0.237934 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32575.8 BW[MB/s] 8177012736 Bytes 0.239387 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32927.2 BW[MB/s] 8177012736 Bytes 0.236832 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32772 BW[MB/s] 8177012736 Bytes 0.237953 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 33104.5 BW[MB/s] 8177012736 Bytes 0.235563 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 23612.7 BW[MB/s] 8177012736 Bytes 0.330255 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32846.2 BW[MB/s] 8177012736 Bytes 0.237416 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32465.7 BW[MB/s] 8177012736 Bytes 0.240198 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 32572.9 BW[MB/s] 8177012736 Bytes 0.239408 MaxTime[sec] 
+
+------------------------------------------------------------------------
+27십만, Finer 32, 128t, 지우면서
+
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17439.6 BW[MB/s] 16354025472 Bytes 0.894309 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19586.4 BW[MB/s] 16354025472 Bytes 0.796288 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 17411.1 BW[MB/s] 16354025472 Bytes 0.895777 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 19559 BW[MB/s] 16354025472 Bytes 0.797402 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21449.9 BW[MB/s] 16354025472 Bytes 0.72711 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20217.3 BW[MB/s] 16354025472 Bytes 0.771438 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 20241.6 BW[MB/s] 16354025472 Bytes 0.770514 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 16650.7 BW[MB/s] 16354025472 Bytes 0.936681 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 18940.3 BW[MB/s] 16354025472 Bytes 0.823453 MaxTime[sec] 
+root@pm:/home/jongseok/mglru/benchmark/hacc-io# ./mpi_finer_lru_test.sh 
+test
+-------- Aggregate Performance --------
+ WRITE Checkpoint Perf: 21163.6 BW[MB/s] 16354025472 Bytes 0.736945 MaxTime[sec] 
+ 
+-----------------------------------------------------------------------------
+
+
