@@ -617,6 +617,34 @@ TRACE_EVENT(bdi_dirty_ratelimit,
 		  (unsigned long)__entry->cgroup_ino
 	)
 );
+TRACE_EVENT(throttling_change_value,
+	TP_PROTO(unsigned long new_thresh, unsigned long new_thresh_ratio,
+		unsigned long thresh, unsigned long bg_thresh,
+		unsigned long dirty, unsigned long avail),
+	TP_ARGS(new_thresh, new_thresh_ratio, thresh, bg_thresh, dirty, avail),
+	TP_STRUCT__entry(
+		__field(unsigned long,	new_thresh)
+		__field(unsigned long,	new_thresh_ratio)
+		__field(unsigned long,	thresh)
+		__field(unsigned long,	bg_thresh)
+		__field(unsigned long,	dirty)
+		__field(unsigned long,	avail)
+	),
+	TP_fast_assign(
+		__entry->new_thresh	= new_thresh;
+		__entry->new_thresh_ratio	= new_thresh_ratio;
+		__entry->thresh	= thresh;
+		__entry->bg_thresh	= bg_thresh;
+		__entry->dirty	= dirty;
+		__entry->avail	= avail;
+	),
+	TP_printk("age %lu prev_age %lu nr_afiile %lu nr_iafile %lu test %lu test %lu",
+		__entry->new_thresh, __entry->new_thresh_ratio,
+		__entry->thresh, __entry->bg_thresh,
+		__entry->dirty, __entry->avail
+	)
+);
+
 
 TRACE_EVENT(balance_dirty_pages,
 

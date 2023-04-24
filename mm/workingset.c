@@ -243,6 +243,12 @@ void workingset_age_nonresident(struct lruvec *lruvec, unsigned long nr_pages)
 		atomic_long_add(nr_pages, &lruvec->nonresident_age);
 	} while ((lruvec = parent_lruvec(lruvec)));
 }
+void workingset_age_activate(struct lruvec *lruvec, unsigned long nr_pages)
+{
+	do {
+		atomic_long_add(nr_pages, &lruvec->activate_age);
+	} while ((lruvec = parent_lruvec(lruvec)));
+}
 
 /**
  * workingset_eviction - note the eviction of a folio from memory
@@ -381,6 +387,7 @@ void workingset_refault(struct folio *folio, void *shadow)
 
 	folio_set_active(folio);
 	workingset_age_nonresident(lruvec, nr);
+	workingset_age_activate(lruvec, nr);
 	mod_lruvec_state(lruvec, WORKINGSET_ACTIVATE_BASE + file, nr);
 
 	/* Folio was active prior to eviction */
@@ -414,6 +421,7 @@ void workingset_activation(struct folio *folio)
 	if (!mem_cgroup_disabled() && !memcg)
 		goto out;
 	workingset_age_nonresident(folio_lruvec(folio), folio_nr_pages(folio));
+	workingset_age_activate(folio_lruvec(folio), folio_nr_pages(folio));
 out:
 	rcu_read_unlock();
 }

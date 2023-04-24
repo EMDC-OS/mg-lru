@@ -1554,6 +1554,7 @@ static inline void wb_dirty_limits(struct dirty_throttle_control *dtc)
  * If we're over `background_thresh' then the writeback threads are woken to
  * perform some writeout.
  */
+static unsigned long prev_nres_age = 0;
 static void balance_dirty_pages(struct bdi_writeback *wb,
 				unsigned long pages_dirtied)
 {
@@ -1575,6 +1576,14 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 	struct backing_dev_info *bdi = wb->bdi;
 	bool strictlimit = bdi->capabilities & BDI_CAP_STRICTLIMIT;
 	unsigned long start_time = jiffies;
+
+  struct pglist_data *pgdat;
+  struct lruvec *lruvec;
+  unsigned long nres_age = 0;
+  unsigned long active_age = 0;
+  unsigned long pnres_age;
+  unsigned long nr_active_file;
+  unsigned long nr_inactive_file;
 
 	for (;;) {
 		unsigned long now = jiffies;
@@ -1747,7 +1756,19 @@ free_running:
 		 * future periods by updating the virtual time; otherwise just
 		 * do a reset, as it may be a light dirtier.
 		 */
+    for_each_online_pgdat(pgdat) {
+	    lruvec = mem_cgroup_lruvec(NULL, pgdat);
+      nres_age += atomic_long_read(&lruvec->nonresident_age);
+      active_age += atomic_long_read(&lruvec->activate_age);
+    }
+    pnres_age = prev_nres_age;
+    prev_nres_age = nres_age;
+	  nr_active_file = global_node_page_state(NR_ACTIVE_FILE);
+	  nr_inactive_file = global_node_page_state(NR_INACTIVE_FILE);
+
 		if (pause < min_pause) {
+    trace_throttling_change_value(nres_age, pnres_age, 
+        nr_active_file, nr_inactive_file, active_age, 0);
 			trace_balance_dirty_pages(wb,
 						  sdtc->thresh,
 						  sdtc->bg_thresh,
@@ -1777,6 +1798,8 @@ free_running:
 		}
 
 pause:
+    trace_throttling_change_value(nres_age, pnres_age, 
+        nr_active_file, nr_inactive_file, active_age, 0);
 		trace_balance_dirty_pages(wb,
 					  sdtc->thresh,
 					  sdtc->bg_thresh,
