@@ -87,7 +87,7 @@ static int vm_highmem_is_dirtyable;
 /*
  * The generator of dirty data starts writeback at this percentage
  */
-static int vm_dirty_ratio = 20;
+static int vm_dirty_ratio = 100;
 
 /*
  * vm_dirty_bytes starts at 0 (disabled) so that it is a function of
@@ -1555,6 +1555,7 @@ static inline void wb_dirty_limits(struct dirty_throttle_control *dtc)
  * perform some writeout.
  */
 static unsigned long prev_nres_age = 0;
+static unsigned long last_tht_time = 0;
 static void balance_dirty_pages(struct bdi_writeback *wb,
 				unsigned long pages_dirtied)
 {
@@ -1581,9 +1582,12 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
   struct lruvec *lruvec;
   unsigned long nres_age = 0;
   unsigned long active_age = 0;
+  unsigned long new_ratio = 0;
   unsigned long pnres_age;
   unsigned long nr_active_file;
   unsigned long nr_inactive_file;
+  unsigned long nr_active_anon;
+  unsigned long nr_inactive_anon;
 
 	for (;;) {
 		unsigned long now = jiffies;
@@ -1765,10 +1769,20 @@ free_running:
     prev_nres_age = nres_age;
 	  nr_active_file = global_node_page_state(NR_ACTIVE_FILE);
 	  nr_inactive_file = global_node_page_state(NR_INACTIVE_FILE);
+	  nr_active_anon = global_node_page_state(NR_ACTIVE_ANON);
+	  nr_inactive_anon = global_node_page_state(NR_INACTIVE_ANON);
+
+    if (time_after(now, last_tht_time + msecs_to_jiffies(1000))) {
+      new_ratio = ((nr_active_file + nr_inactive_file) * 100) 
+            / (nr_active_file + nr_inactive_file 
+                + nr_active_anon + nr_inactive_anon + 1);
+      vm_dirty_ratio = new_ratio > 20 ? new_ratio : 20;
+      last_tht_time = now;
+      trace_throttling_change_value(nres_age, pnres_age, 
+          nr_active_file, nr_inactive_file, active_age, vm_dirty_ratio);
+    }
 
 		if (pause < min_pause) {
-    trace_throttling_change_value(nres_age, pnres_age, 
-        nr_active_file, nr_inactive_file, active_age, 0);
 			trace_balance_dirty_pages(wb,
 						  sdtc->thresh,
 						  sdtc->bg_thresh,
@@ -1798,8 +1812,6 @@ free_running:
 		}
 
 pause:
-    trace_throttling_change_value(nres_age, pnres_age, 
-        nr_active_file, nr_inactive_file, active_age, 0);
 		trace_balance_dirty_pages(wb,
 					  sdtc->thresh,
 					  sdtc->bg_thresh,
