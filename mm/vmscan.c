@@ -2311,10 +2311,8 @@ static unsigned int move_pages_to_lru(struct lruvec *lruvec,
 		add_page_to_lru_list(page, lruvec);
 		nr_pages = thp_nr_pages(page);
 		nr_moved += nr_pages;
-		if (PageActive(page)) {
+		if (PageActive(page))
 			workingset_age_nonresident(lruvec, nr_pages);
-			workingset_age_activate(lruvec, nr_pages);
-    }
 	}
 
 	/*

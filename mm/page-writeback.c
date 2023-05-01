@@ -87,7 +87,8 @@ static int vm_highmem_is_dirtyable;
 /*
  * The generator of dirty data starts writeback at this percentage
  */
-static int vm_dirty_ratio = 100;
+static int vm_dirty_ratio = 20;
+static int adaptive_cache = 1;
 
 /*
  * vm_dirty_bytes starts at 0 (disabled) so that it is a function of
@@ -1555,7 +1556,14 @@ static inline void wb_dirty_limits(struct dirty_throttle_control *dtc)
  * perform some writeout.
  */
 static unsigned long prev_nres_age = 0;
-static unsigned long last_tht_time = 0;
+static atomic64_t last_tht_time = ATOMIC_INIT(0);
+static unsigned long cuml_dirty_pages = 0;
+static unsigned long prev_size_ratio = 200;
+static unsigned long prev_cache_count = 0;
+static unsigned long cache_bounded_count = 0;
+static unsigned long prev_cache_type = 0;
+static unsigned long prev_cache_total = 0;
+static bool prev_free = false;
 static void balance_dirty_pages(struct bdi_writeback *wb,
 				unsigned long pages_dirtied)
 {
@@ -1578,18 +1586,26 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 	bool strictlimit = bdi->capabilities & BDI_CAP_STRICTLIMIT;
 	unsigned long start_time = jiffies;
 
-  struct pglist_data *pgdat;
-  struct lruvec *lruvec;
-  unsigned long nres_age = 0;
-  unsigned long active_age = 0;
-  unsigned long new_ratio = 0;
-  unsigned long pnres_age;
-  unsigned long nr_active_file;
-  unsigned long nr_inactive_file;
-  unsigned long nr_active_anon;
-  unsigned long nr_inactive_anon;
+	struct pglist_data *pgdat;
+	struct lruvec *lruvec;
 
-	for (;;) {
+	unsigned long nres_age = 0;
+	unsigned long pnres_age;
+
+	unsigned long new_ratio = 0;
+	unsigned long size_ratio = 0;
+	unsigned long eviction_ratio = 0;
+	unsigned long nr_active_file;
+	unsigned long nr_inactive_file;
+	unsigned long nr_active_anon;
+	unsigned long nr_inactive_anon;
+	unsigned long nr_free;
+	unsigned long last_tht = atomic64_read(&last_tht_time);
+
+
+	cuml_dirty_pages += pages_dirtied;
+	
+  for (;;) {
 		unsigned long now = jiffies;
 		unsigned long dirty, thresh, bg_thresh;
 		unsigned long m_dirty = 0;	/* stop bogus uninit warnings */
@@ -1659,6 +1675,23 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 			unsigned long m_intv;
 
 free_running:
+      prev_nres_age = 0;
+			prev_size_ratio = 200;
+			prev_cache_type = 0;
+			prev_cache_count = 0;
+			prev_cache_total = 0;
+			cache_bounded_count = 0;
+			cuml_dirty_pages = 0;
+			if (time_after(now, last_tht + msecs_to_jiffies(1000))) {
+				if (last_tht != atomic64_cmpxchg(&last_tht_time, last_tht, now))
+					goto out1;
+				//last_tht_time = now;
+				new_ratio = vm_dirty_ratio * 80 / 100;
+				vm_dirty_ratio = new_ratio > 20 ? new_ratio : 20;
+				prev_free = true;
+			}
+out1:
+
 			intv = dirty_poll_interval(dirty, thresh);
 			m_intv = ULONG_MAX;
 
@@ -1760,35 +1793,100 @@ free_running:
 		 * future periods by updating the virtual time; otherwise just
 		 * do a reset, as it may be a light dirtier.
 		 */
-    for_each_online_pgdat(pgdat) {
-	    lruvec = mem_cgroup_lruvec(NULL, pgdat);
-      nres_age += atomic_long_read(&lruvec->nonresident_age);
-      active_age += atomic_long_read(&lruvec->activate_age);
-    }
-    pnres_age = prev_nres_age;
-    prev_nres_age = nres_age;
-	  nr_active_file = global_node_page_state(NR_ACTIVE_FILE);
-	  nr_inactive_file = global_node_page_state(NR_INACTIVE_FILE);
-	  nr_active_anon = global_node_page_state(NR_ACTIVE_ANON);
-	  nr_inactive_anon = global_node_page_state(NR_INACTIVE_ANON);
+    if (prev_free || time_after(now, last_tht + msecs_to_jiffies(1000))) {
+      //if (timeout) {
+      if (last_tht != atomic64_cmpxchg(&last_tht_time, last_tht, now))
+        goto out2;
+      //last_tht_time = now;
 
-    if (time_after(now, last_tht_time + msecs_to_jiffies(1000))) {
-      new_ratio = ((nr_active_file + nr_inactive_file) * 100) 
-            / (nr_active_file + nr_inactive_file 
-                + nr_active_anon + nr_inactive_anon + 1);
+      nr_active_file = global_node_page_state(NR_ACTIVE_FILE);
+      nr_inactive_file = global_node_page_state(NR_INACTIVE_FILE);
+      nr_active_anon = global_node_page_state(NR_ACTIVE_ANON);
+      nr_inactive_anon = global_node_page_state(NR_INACTIVE_ANON);
+      nr_free = global_zone_page_state(NR_FREE_PAGES);
+
+      size_ratio = ((nr_active_file + nr_inactive_file + nr_free) * 100)
+        / (nr_active_file + nr_inactive_file
+            + nr_active_anon + nr_inactive_anon + nr_free + 1);
+
+      new_ratio = vm_dirty_ratio * 120 / 100;
+      if (new_ratio > size_ratio)
+        new_ratio = size_ratio;
+
+      for_each_online_pgdat(pgdat) {
+        lruvec = mem_cgroup_lruvec(NULL, pgdat);
+        nres_age += atomic_long_read(&lruvec->nonresident_age);
+      }
+
+      pnres_age = prev_nres_age;
+      prev_nres_age = nres_age;
+      eviction_ratio = (nres_age-pnres_age) * 100 / cuml_dirty_pages;
+
+      if (!adaptive_cache || pnres_age == 0 || eviction_ratio == 0)
+        goto just_size;	
+
+      if (abs(prev_size_ratio - size_ratio) > 5) {
+        prev_cache_type = 0;
+        prev_cache_count = 0;
+        prev_cache_total = 0;
+        cache_bounded_count = 0;
+      } else {
+        if (eviction_ratio > 100) {
+          if (prev_cache_type == 2) {
+            prev_cache_count = 0;
+            cache_bounded_count = 0;
+            prev_cache_total = 0;
+          }
+
+          prev_cache_type = 1;
+          prev_cache_total += eviction_ratio - 100;
+          prev_cache_count++;
+        }
+        else if (eviction_ratio < 50) {
+          if (prev_cache_type == 1) {
+            prev_cache_count = 0;
+            cache_bounded_count = 0;
+            prev_cache_total = 0;
+          }
+
+          prev_cache_type = 2;
+          prev_cache_total += 50 - eviction_ratio;
+          prev_cache_count++;
+        } else {
+          cache_bounded_count++;
+          if (cache_bounded_count == 10) {
+            //	prev_cache_count++;
+            cache_bounded_count = 0;
+          }
+        }
+
+        if (prev_cache_count >= 5) {
+          if (size_ratio > (prev_cache_total/prev_cache_count))
+            new_ratio = size_ratio - (prev_cache_total/prev_cache_count);
+          else
+            new_ratio = 20;
+        }
+      }
+
+just_size:
+      prev_size_ratio = size_ratio;
       vm_dirty_ratio = new_ratio > 20 ? new_ratio : 20;
-      last_tht_time = now;
-      trace_throttling_change_value(nres_age, pnres_age, 
-          nr_active_file, nr_inactive_file, active_age, vm_dirty_ratio);
+
+      trace_throttling_change_value(eviction_ratio, cuml_dirty_pages,
+          size_ratio, new_ratio, prev_cache_total, prev_cache_count);
+
+      cuml_dirty_pages = 0;
+      prev_free = false;
     }
+out2:
 
 		if (pause < min_pause) {
 			trace_balance_dirty_pages(wb,
 						  sdtc->thresh,
 						  sdtc->bg_thresh,
 						  sdtc->dirty,
-						  sdtc->wb_thresh,
-						  sdtc->wb_dirty,
+              sdtc->wb_thresh,
+              sdtc->wb_dirty,
 						  dirty_ratelimit,
 						  task_ratelimit,
 						  pages_dirtied,
@@ -2121,6 +2219,15 @@ static int page_writeback_cpu_online(unsigned int cpu)
 static const unsigned long dirty_bytes_min = 2 * PAGE_SIZE;
 
 static struct ctl_table vm_page_writeback_sysctls[] = {
+  {
+		.procname   = "adaptive_cache",
+		.data       = &adaptive_cache,
+		.maxlen     = sizeof(adaptive_cache),
+		.mode       = 0644,
+		.proc_handler   = dirty_background_ratio_handler,
+		.extra1     = SYSCTL_ZERO,
+		.extra2     = SYSCTL_ONE_HUNDRED,
+	},
 	{
 		.procname   = "dirty_background_ratio",
 		.data       = &dirty_background_ratio,
