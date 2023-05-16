@@ -1594,6 +1594,7 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 
 	unsigned long new_ratio = 0;
 	unsigned long size_ratio = 0;
+	unsigned long thresh_ratio = 0;
 	unsigned long eviction_ratio = 0;
 	unsigned long nr_active_file;
 	unsigned long nr_inactive_file;
@@ -1809,6 +1810,8 @@ out1:
         / (nr_active_file + nr_inactive_file
             + nr_active_anon + nr_inactive_anon + nr_free + 1);
 
+      thresh_ratio = size_ratio > 40 ? (size_ratio-20) : 20;
+
       new_ratio = vm_dirty_ratio * 120 / 100;
       if (new_ratio > size_ratio)
         new_ratio = size_ratio;
@@ -1864,13 +1867,13 @@ out1:
           if (size_ratio > (prev_cache_total/prev_cache_count))
             new_ratio = size_ratio - (prev_cache_total/prev_cache_count);
           else
-            new_ratio = 20;
+            new_ratio = 0;
         }
       }
 
 just_size:
       prev_size_ratio = size_ratio;
-      vm_dirty_ratio = new_ratio > 20 ? new_ratio : 20;
+      vm_dirty_ratio = new_ratio > thresh_ratio ? new_ratio : thresh_ratio;
 
       trace_throttling_change_value(eviction_ratio, cuml_dirty_pages,
           size_ratio, new_ratio, prev_cache_total, prev_cache_count);
