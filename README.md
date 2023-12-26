@@ -9,10 +9,12 @@ This repository contains the Linux kernel modifications presented in our researc
 - **I/O Throttling Optimization**: Dynamically adjusts throttling to balance write performance and overall system performance.
 
 ## Installation and Usage
-We will be uploading the modified kernel source code to the current repository shortly
+- Build and install the source code in the kernel directory.
+- Reboot with the installed kernel. All modified features automatically function during buffered I/O.
+- To check the current system's compliance with the ratio of dirty pages, use the following command: 
 
 ```
-# TBD
+sudo cat /proc/sys/vm/dirty_ratio
 ```
 
 ## Citation
