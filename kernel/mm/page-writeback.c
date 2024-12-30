@@ -1603,7 +1603,7 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 	unsigned long nr_free;
 	unsigned long last_tht = atomic64_read(&last_tht_time);
 
-
+	// Accumulate dirty pages
 	cuml_dirty_pages += pages_dirtied;
 	
   for (;;) {
@@ -1612,13 +1612,16 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 		unsigned long m_dirty = 0;	/* stop bogus uninit warnings */
 		unsigned long m_thresh = 0;
 		unsigned long m_bg_thresh = 0;
-
+	  
+		// Update global dirty and writeback counts
 		nr_reclaimable = global_node_page_state(NR_FILE_DIRTY);
 		gdtc->avail = global_dirtyable_memory();
 		gdtc->dirty = nr_reclaimable + global_node_page_state(NR_WRITEBACK);
 
+	  	// Update global domain limits
 		domain_dirty_limits(gdtc);
 
+	  	// Check if strict limits are enforced
 		if (unlikely(strictlimit)) {
 			wb_dirty_limits(gdtc);
 
@@ -1632,6 +1635,7 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 		}
 
 		if (mdtc) {
+			// For memcg domains, calculate limits and dirty pages
 			unsigned long filepages, headroom, writeback;
 
 			/*
@@ -1676,13 +1680,16 @@ static void balance_dirty_pages(struct bdi_writeback *wb,
 			unsigned long m_intv;
 
 free_running:
-      prev_nres_age = 0;
+			// Reset accumulated values if free running
+      			prev_nres_age = 0;
 			prev_size_ratio = 200;
 			prev_cache_type = 0;
 			prev_cache_count = 0;
 			prev_cache_total = 0;
 			cache_bounded_count = 0;
 			cuml_dirty_pages = 0;
+			
+			// Adjust dirty ratio periodically
 			if (time_after(now, last_tht + msecs_to_jiffies(1000))) {
 				if (last_tht != atomic64_cmpxchg(&last_tht_time, last_tht, now))
 					goto out1;
@@ -1704,6 +1711,7 @@ out1:
 			break;
 		}
 
+	  	// Initiate background writeback if necessary
 		if (unlikely(!writeback_in_progress(wb)))
 			wb_start_background_writeback(wb);
 
@@ -1762,9 +1770,11 @@ out1:
 				sdtc = mdtc;
 		}
 
+	  	// If dirty thresholds exceeded, adjust writeback accordingly
 		if (dirty_exceeded && !wb->dirty_exceeded)
 			wb->dirty_exceeded = 1;
 
+	  	// Periodically update bandwidth usage
 		if (time_is_before_jiffies(READ_ONCE(wb->bw_time_stamp) +
 					   BANDWIDTH_INTERVAL))
 			__wb_update_bandwidth(gdtc, mdtc, true);
@@ -1778,6 +1788,7 @@ out1:
 					 task_ratelimit, dirty_ratelimit,
 					 &nr_dirtied_pause);
 
+	  	// Handle edge cases for pause adjustments
 		if (unlikely(task_ratelimit == 0)) {
 			period = max_pause;
 			pause = max_pause;
@@ -1825,6 +1836,7 @@ out1:
       prev_nres_age = nres_age;
       eviction_ratio = (nres_age-pnres_age) * 100 / cuml_dirty_pages;
 
+      // Adjust cache-related counters and ratios
       if (!adaptive_cache || pnres_age == 0 || eviction_ratio == 0)
         goto just_size;	
 
@@ -1863,6 +1875,7 @@ out1:
           }
         }
 
+	// Adjust dirty ratio if sufficient data is collected
         if (prev_cache_count >= 5) {
           if (size_ratio > (prev_cache_total/prev_cache_count))
             new_ratio = size_ratio - (prev_cache_total/prev_cache_count);
@@ -1882,7 +1895,7 @@ just_size:
       prev_free = false;
     }
 out2:
-
+		// Log and adjust pause period if required
 		if (pause < min_pause) {
 			trace_balance_dirty_pages(wb,
 						  sdtc->thresh,
@@ -1957,9 +1970,11 @@ pause:
 			break;
 	}
 
+	// Reset dirty_exceeded flag if no longer exceeding limits
 	if (!dirty_exceeded && wb->dirty_exceeded)
 		wb->dirty_exceeded = 0;
 
+	// Start background writeback if necessary
 	if (writeback_in_progress(wb))
 		return;
 
